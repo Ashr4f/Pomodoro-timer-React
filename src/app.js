@@ -4,11 +4,14 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import React from "react";
 import ReactDOM from "react-dom";
+
+import PomodoroTimer from "./components/pomodoro-timer";
+
 import "./app.scss";
 
 const App = () => (
     <div>
-        <h1>{"Hello world"}</h1>
+        <PomodoroTimer />
     </div>
 );
 
