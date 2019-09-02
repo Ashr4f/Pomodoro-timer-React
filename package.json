@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Ashr4f/Pomodoro-timer-React#readme",
   "devDependencies": {
     "@becode/eslint-config": "^0.5.2",
+    "acorn": "^7.0.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.0",
@@ -36,6 +37,9 @@
     "sass": "^1.22.10"
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
