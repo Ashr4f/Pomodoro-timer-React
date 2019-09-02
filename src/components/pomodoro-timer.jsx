@@ -16,7 +16,7 @@ export default function PomodoroTimer() {
     }, [paused]);
 
     function startTimer() {
-        if (seconds >= 60 && seconds <= 59 * 60) {
+        if (seconds >= 60 && seconds <= 60 * 60) {
             setPaused(false);
         }
     }
