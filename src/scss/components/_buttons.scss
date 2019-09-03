@@ -1,12 +1,29 @@
 .timer-buttons-container {
     position: relative;
     text-align: center;
+
     .timer-button {
+        display: inline-block;
+        padding: 2vmin 5vmin;
+        margin: 1rem;
+        font-size: calc(1rem + 5vmin);
         border: none;
         outline: none;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 2rem;
+        border-bottom: 4px solid rgba(#596275, 0.5);
+        color: #ecf0f1;
+        text-shadow: 2px 2px #596275;
         cursor: pointer;
-        padding: 5vmin;
-        font-size: calc(1rem + 5vmin);
-        margin: 1rem;
+        transition: 0.35s background-color ease-in-out;
+
+        &:hover {
+            background-color: rgba(#596275, 0.9);
+        }
+
+        @media screen and(max-width: 767px) {
+            display: block;
+            width: calc(100% - 2rem);
+        }
     }
 }

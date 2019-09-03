@@ -1,23 +1,27 @@
 *::selection {
-    background: #c7ecee;
-    color: #30336b;
+    background: #30336b;
+    color: #c7ecee;
 }
 
 *::-moz-selection {
-    background: #c7ecee;
-    color: #30336b;
+    background: #30336b;
+    color: #c7ecee;
 }
+
 html,
 body {
     margin: 0;
     padding: 0;
     height: 100vh;
 }
+
 body {
-    background-color: #ffc107;
+    background-color: #ea8685;
 }
+
 #root {
     height: 100%;
+
     .timer {
         position: relative;
         text-align: center;
@@ -25,7 +29,7 @@ body {
         padding: calc(30px + 10vmin) 0;
         font-size: calc(1rem + 15vmin);
         color: #ecf0f1;
-        text-shadow: 2px 2px #2c3e50;
+        text-shadow: 2px 2px #596275;
         background: rgba(255, 255, 255, 0.4);
     }
 }
