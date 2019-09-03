@@ -1,0 +1,12 @@
+.timer-buttons-container {
+    position: relative;
+    text-align: center;
+    .timer-button {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 5vmin;
+        font-size: calc(1rem + 5vmin);
+        margin: 1rem;
+    }
+}

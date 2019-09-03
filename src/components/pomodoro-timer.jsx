@@ -51,18 +51,32 @@ export default function PomodoroTimer() {
     return (
         <React.Fragment>
             {`${Math.floor(seconds / 60)}:${`00${seconds % 60}`.slice(-2)}`}
-            <button type={"button"} onClick={incrementTimer}>
-                {"+"}
-            </button>
-            <button type={"button"} onClick={paused ? startTimer : pauseTimer}>
-                {paused ? "Start" : "Pause"}
-            </button>
-            <button type={"button"} onClick={resetTimer}>
-                {"Reset"}
-            </button>
-            <button type={"button"} onClick={decrementTimer}>
-                {"-"}
-            </button>
+            <div className={"timer-buttons-container"}>
+                <button
+                    className={"timer-button"}
+                    type={"button"}
+                    onClick={incrementTimer}>
+                    {"+"}
+                </button>
+                <button
+                    className={"timer-button"}
+                    type={"button"}
+                    onClick={paused ? startTimer : pauseTimer}>
+                    {paused ? "Start" : "Pause"}
+                </button>
+                <button
+                    className={"timer-button"}
+                    type={"button"}
+                    onClick={resetTimer}>
+                    {"Reset"}
+                </button>
+                <button
+                    className={"timer-button"}
+                    type={"button"}
+                    onClick={decrementTimer}>
+                    {"-"}
+                </button>
+            </div>
         </React.Fragment>
     );
 }
