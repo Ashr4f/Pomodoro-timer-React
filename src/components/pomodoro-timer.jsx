@@ -25,6 +25,11 @@ export default function PomodoroTimer() {
                     }
                     dynamicDocumentTitle("Timer finsihed");
                     setPaused(true);
+
+                    if (s === 0) {
+                        return s;
+                    }
+
                     return s - 1;
                 });
             } else {
