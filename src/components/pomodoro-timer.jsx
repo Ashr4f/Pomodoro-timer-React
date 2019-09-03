@@ -7,7 +7,28 @@ export default function PomodoroTimer() {
     useEffect(() => {
         const int = setInterval(() => {
             if (!paused) {
-                setSeconds(s => s - 1);
+                setSeconds(s => {
+                    const dynamicDocumentTitle = specialText => {
+                        if (specialText) {
+                            document.title = specialText;
+                        } else {
+                            document.title = `Timer: ${Math.floor((s - 1) / 60)
+                                .toString()
+                                .padStart(2, "0")}:${Math.floor((s - 1) % 60)
+                                .toString()
+                                .padStart(2, "0")}`;
+                        }
+                    };
+                    if (s > 1) {
+                        dynamicDocumentTitle();
+                        return s - 1;
+                    }
+                    dynamicDocumentTitle("Timer finsihed");
+                    setPaused(true);
+                    return s - 1;
+                });
+            } else {
+                clearInterval(int);
             }
         }, 1000);
         return () => {
@@ -16,7 +37,7 @@ export default function PomodoroTimer() {
     }, [paused]);
 
     function startTimer() {
-        if (seconds >= 60 && seconds <= 60 * 60) {
+        if (seconds > 1 && seconds <= 60 * 60) {
             setPaused(false);
         }
     }
@@ -50,7 +71,13 @@ export default function PomodoroTimer() {
 
     return (
         <React.Fragment>
-            {`${Math.floor(seconds / 60)}:${`00${seconds % 60}`.slice(-2)}`}
+            <p className={"timer"}>
+                {`${Math.floor(seconds / 60)
+                    .toString()
+                    .padStart(2, "0")}:${`${seconds % 60}`
+                    .toString()
+                    .padStart(2, "0")}`}
+            </p>
             <div className={"timer-buttons-container"}>
                 <button
                     className={"timer-button"}
