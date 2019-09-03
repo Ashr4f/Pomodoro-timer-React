@@ -12,18 +12,20 @@ export default function PomodoroTimer() {
                         if (specialText) {
                             document.title = specialText;
                         } else {
-                            document.title = `Timer: ${Math.floor((s - 1) / 60)
+                            document.title = `🍅 Timer: ${Math.floor(
+                                (s - 1) / 60,
+                            )
                                 .toString()
                                 .padStart(2, "0")}:${Math.floor((s - 1) % 60)
                                 .toString()
-                                .padStart(2, "0")}`;
+                                .padStart(2, "0")} 🍅`;
                         }
                     };
                     if (s > 1) {
                         dynamicDocumentTitle();
                         return s - 1;
                     }
-                    dynamicDocumentTitle("Timer finsihed");
+                    dynamicDocumentTitle("🍅 Timer finsihed 🍅");
                     setPaused(true);
 
                     if (s === 0) {
