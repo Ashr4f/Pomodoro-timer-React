@@ -1,0 +1,28 @@
+.header-container {
+    position: relative;
+    line-height: calc(2rem + 5vmin);
+    text-align: center;
+
+    p {
+        color: #ecf0f1;
+        text-shadow: 2px 2px #596275;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: calc(1rem + 3vmin);
+        margin: 0;
+        padding: 0 1rem;
+    }
+
+    .github-fork-container {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    @media screen and(max-width: 767px) {
+        .github-fork-container {
+            display: none;
+        }
+    }
+}
