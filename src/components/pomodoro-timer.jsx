@@ -1,8 +1,16 @@
 import React, {useState, useEffect} from "react";
 
-export default function PomodoroTimer() {
-    const [seconds, setSeconds] = useState(25 * 60);
-    const [paused, setPaused] = useState(true);
+export default function PomodoroTimer(props) {
+    const [seconds, setSeconds] = useState(props.secondsDefaultValue);
+    const [paused, setPaused] = useState(props.breakPaused);
+
+    useEffect(() => {
+        setSeconds(props.secondsDefaultValue);
+    }, [props.secondsDefaultValue]);
+
+    useEffect(() => {
+        setPaused(props.breakPaused);
+    }, [props.breakPaused]);
 
     useEffect(() => {
         const int = setInterval(() => {
@@ -25,6 +33,9 @@ export default function PomodoroTimer() {
                         dynamicDocumentTitle();
                         return s - 1;
                     }
+
+                    props.showModal(true);
+
                     dynamicDocumentTitle("🍅 Timer finsihed 🍅");
                     setPaused(true);
 
@@ -44,28 +55,22 @@ export default function PomodoroTimer() {
     }, [paused]);
 
     function startTimer() {
-        if (seconds > 1 && seconds <= 60 * 60) {
+        if (seconds >= 1 && seconds <= 60 * 60) {
             setPaused(false);
+        } else {
+            //
         }
     }
     function incrementTimer() {
         if (seconds >= 0 && seconds <= 59 * 60) {
-            setSeconds(seconds + 60);
-        }
-        if (paused) {
             setPaused(true);
-        } else if (paused === false) {
-            setPaused(false);
+            setSeconds(seconds + 60);
         }
     }
     function decrementTimer() {
-        if (seconds >= 60 && seconds <= 59 * 60) {
-            setSeconds(seconds - 60);
-        }
-        if (paused) {
+        if (seconds >= 119) {
             setPaused(true);
-        } else if (paused === false) {
-            setPaused(false);
+            setSeconds(seconds - 60);
         }
     }
     function pauseTimer() {
@@ -74,6 +79,7 @@ export default function PomodoroTimer() {
     function resetTimer() {
         setPaused(true);
         setSeconds(25 * 60);
+        document.title = "🍅 Pomodro Timer 🍅";
     }
 
     return (
@@ -85,7 +91,7 @@ export default function PomodoroTimer() {
                     .toString()
                     .padStart(2, "0")}`}
             </p>
-            <div className={"timer-buttons-container"}>
+            <div className={"timer-buttons-container clearfix"}>
                 <button
                     className={"timer-button"}
                     type={"button"}
