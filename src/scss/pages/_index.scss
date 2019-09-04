@@ -1,11 +1,11 @@
 *::selection {
-    background: #30336b;
-    color: #FFFFFF;
+    background: darken($main-background-color, 15);
+    color: $white;
 }
 
 *::-moz-selection {
-    background: #30336b;
-    color: #FFFFFF;
+    background: darken($main-background-color, 15);
+    color: $white;
 }
 
 html,
@@ -16,7 +16,8 @@ body {
 }
 
 body {
-    background-color: #2e86de;
+    background-color: $main-background-color;
+    color: $main-font-color;
 }
 
 #root {
@@ -28,8 +29,8 @@ body {
         margin: 0;
         padding: calc(30px + 10vmin) 0;
         font-size: calc(1rem + 15vmin);
-        color: #ecf0f1;
-        text-shadow: 2px 2px #596275;
-        background: rgba(255, 255, 255, 0.4);
+        color: $main-font-color;
+        text-shadow: 2px 2px $main-text-shadow-color;
+        background: darken($main-background-color, 10);
     }
 }
