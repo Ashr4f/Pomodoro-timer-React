@@ -1,0 +1,97 @@
+.modal {
+    h4 {
+        font-size: calc(1rem + 1vmin);
+    }
+    p {
+        font-size: calc(1rem + 0.5vmin);
+    }
+    .modal-content {
+        background-color: darken($white, 5);
+        color: rgba($secondary-font-color, 0.8);
+    }
+    button {
+        color: $secondary-font-color;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+    .modal-body {
+        text-align: center;
+        .clearfix {
+            padding: calc(30px + 4vmin) 0;
+        }
+        .break-timer {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            font-size: calc(1rem + 3vmin);
+        }
+        .break-button {
+            display: inline-block;
+            padding: 1vmin 0;
+            width: 10vmin;
+            margin: 0 1rem;
+            font-size: calc(1rem + 2vmin);
+            border: none;
+            outline: none;
+            background: darken($main-background-color, 10);
+            border-radius: 0.85rem;
+            border-bottom: 4px solid rgba($main-borders-color, 0.5);
+            color: $main-font-color;
+            text-align: center;
+            text-shadow: 2px 2px $main-text-shadow-color;
+            cursor: pointer;
+            transition: 0.35s background-color ease-in-out;
+
+            &:hover {
+                background-color: darken($main-buttons-hover-color, 15);
+            }
+
+            @media screen and(max-width: 767px) {
+                margin: 0 auto;
+                width: 20vmin;
+                font-size: calc(1rem + 2vmin);
+                vertical-align: middle;
+            }
+        }
+    }
+    .modal-footer-container {
+        padding: 1rem;
+        border-top: 1px solid #dee2e6;
+        border-bottom-right-radius: 0.3rem;
+        border-bottom-left-radius: 0.3rem;
+        button {
+            float: left;
+            padding: 1vmin 3vmin;
+            font-size: calc(1rem + 1vmin);
+            border: none;
+            outline: none;
+            background-color: rgba($white, 0.4);
+            border-radius: 1rem;
+            background: darken($main-background-color, 10);
+            color: $main-font-color;
+            text-align: center;
+            text-shadow: 2px 2px $main-text-shadow-color;
+            cursor: pointer;
+            transition: 0.35s background-color ease-in-out;
+
+            &:hover {
+                background-color: darken($main-buttons-hover-color, 15);
+            }
+
+            @media screen and(max-width: 767px) {
+                display: block;
+                margin: 0 auto;
+                width: calc(50% - 2rem);
+                font-size: calc(1rem + 1vmin);
+            }
+        }
+        > :not(:first-child) {
+            float: right;
+        }
+    }
+}

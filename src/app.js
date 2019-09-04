@@ -7,20 +7,42 @@ import ReactDOM from "react-dom";
 
 import Header from "./components/header";
 
+import MyVerticallyCenteredModal from "./components/modals";
+
 import PomodoroTimer from "./components/pomodoro-timer";
 
 import "./app.scss";
 
-const App = () => (
-    <React.Fragment>
-        <div className={"header-container"}>
-            <Header />
-        </div>
+const App = () => {
+    const [modalShow, setModalShow] = React.useState(false);
+    const [secondsDefaultValue, setSecondsDefaultValue] = React.useState(1);
+    const [breakPaused, setBreakPaused] = React.useState(true);
 
-        <div className={"content"}>
-            <PomodoroTimer />
-        </div>
-    </React.Fragment>
-);
+    return (
+        <React.Fragment>
+            <div className={"header-container"}>
+                <Header />
+            </div>
+
+            <div className={"content"}>
+                <PomodoroTimer
+                    showModal={setModalShow}
+                    secondsDefaultValue={secondsDefaultValue}
+                    breakPaused={breakPaused}
+                />
+
+                <MyVerticallyCenteredModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                    onSet={value => {
+                        setModalShow(false);
+                        setSecondsDefaultValue(value);
+                        setBreakPaused(false);
+                    }}
+                />
+            </div>
+        </React.Fragment>
+    );
+};
 
 ReactDOM.render(<App />, document.querySelector("#root"));
