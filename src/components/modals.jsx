@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Modal from "react-bootstrap/Modal";
 
-export default function MyVerticallyCenteredModal(props) {
+export default function BreakTimerModal(props) {
     const [breakSeconds, setBreakSeconds] = useState(5 * 60);
 
     function incrementBreakSeconds() {

@@ -7,7 +7,7 @@ import ReactDOM from "react-dom";
 
 import Header from "./components/header";
 
-import MyVerticallyCenteredModal from "./components/modals";
+import BreakTimerModal from "./components/modals";
 
 import PomodoroTimer from "./components/pomodoro-timer";
 
@@ -33,7 +33,7 @@ const App = () => {
                     breakPaused={breakPaused}
                 />
 
-                <MyVerticallyCenteredModal
+                <BreakTimerModal
                     show={modalShow}
                     onHide={() => setModalShow(false)}
                     onSet={value => {
