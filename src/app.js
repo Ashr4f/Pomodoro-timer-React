@@ -15,7 +15,9 @@ import "./app.scss";
 
 const App = () => {
     const [modalShow, setModalShow] = React.useState(false);
-    const [secondsDefaultValue, setSecondsDefaultValue] = React.useState(1);
+    const [secondsDefaultValue, setSecondsDefaultValue] = React.useState(
+        25 * 60,
+    );
     const [breakPaused, setBreakPaused] = React.useState(true);
 
     return (
