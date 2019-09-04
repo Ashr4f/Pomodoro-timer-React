@@ -9,22 +9,38 @@
         font-size: calc(1rem + 3vmin);
         border: none;
         outline: none;
-        background-color: rgba(255, 255, 255, 0.4);
+        background: darken($main-background-color, 10);
         border-radius: 2rem;
-        border-bottom: 4px solid rgba(#596275, 0.5);
-        color: #ecf0f1;
-        text-shadow: 2px 2px #596275;
+        border-bottom: 4px solid rgba($main-borders-color, 0.5);
+        color: $main-font-color;
+        text-align: center;
+        text-shadow: 2px 2px $main-text-shadow-color;
         cursor: pointer;
         transition: 0.35s background-color ease-in-out;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
 
         &:hover {
-            background-color: rgba(black, 0.5);
+            background-color: darken($main-buttons-hover-color, 15);
         }
 
         @media screen and(max-width: 767px) {
+            width: calc(50% - 10vmin);
+            float: left;
+            font-size: calc(1rem + 4vmin);
+            &:nth-child(2n) {
+                float: right;
+            }
+        }
+
+        @media screen and(max-width: 400px) {
             display: block;
             width: calc(100% - 2rem);
             font-size: calc(1rem + 4vmin);
+            float: none !important;
         }
     }
 }
