@@ -68,7 +68,7 @@ export default function PomodoroTimer(props) {
         }
     }
     function decrementTimer() {
-        if (seconds >= 119) {
+        if (seconds > 60) {
             setPaused(true);
             setSeconds(seconds - 60);
         }

@@ -10,7 +10,7 @@ export default function BreakTimerModal(props) {
         }
     }
     function decrementBreakSeconds() {
-        if (breakSeconds >= 119) {
+        if (breakSeconds > 60) {
             setBreakSeconds(breakSeconds - 60);
         }
     }
