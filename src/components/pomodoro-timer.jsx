@@ -29,20 +29,15 @@ export default function PomodoroTimer(props) {
                                 .padStart(2, "0")} 🍅`;
                         }
                     };
-                    if (s > 1) {
-                        dynamicDocumentTitle();
-                        return s - 1;
-                    }
 
-                    props.showModal(true);
-
-                    dynamicDocumentTitle("🍅 Timer finsihed 🍅");
-                    setPaused(true);
-
-                    if (s === 0) {
+                    if (s <= 0) {
+                        props.showModal(true);
+                        dynamicDocumentTitle("🍅 Timer finsihed 🍅");
+                        setPaused(true);
                         return s;
                     }
 
+                    dynamicDocumentTitle();
                     return s - 1;
                 });
             } else {
@@ -57,8 +52,6 @@ export default function PomodoroTimer(props) {
     function startTimer() {
         if (seconds >= 1 && seconds <= 60 * 60) {
             setPaused(false);
-        } else {
-            //
         }
     }
     function incrementTimer() {
