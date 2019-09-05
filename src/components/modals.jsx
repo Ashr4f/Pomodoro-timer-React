@@ -1,8 +1,12 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Modal from "react-bootstrap/Modal";
 
 export default function BreakTimerModal(props) {
     const [breakSeconds, setBreakSeconds] = useState(5 * 60);
+
+    useEffect(() => {
+        setBreakSeconds(5 * 60);
+    }, [props.show]);
 
     function incrementBreakSeconds() {
         if (breakSeconds >= 0 && breakSeconds <= 59 * 60) {
