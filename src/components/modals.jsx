@@ -5,8 +5,10 @@ export default function BreakTimerModal(props) {
     const [breakSeconds, setBreakSeconds] = useState(5 * 60);
 
     useEffect(() => {
-        setBreakSeconds(5 * 60);
-    }, [props.show]);
+        setTimeout(() => {
+            setBreakSeconds(5 * 60);
+        }, 500);
+    }, [props.onHide]);
 
     function incrementBreakSeconds() {
         if (breakSeconds >= 0 && breakSeconds <= 59 * 60) {
@@ -57,7 +59,7 @@ export default function BreakTimerModal(props) {
                 </div>
             </Modal.Body>
             <div className={"clearfix modal-footer-container"}>
-                <button type={"button"} onClick={() => props.onHide}>
+                <button type={"button"} onClick={() => props.onHide()}>
                     {"Close"}
                 </button>
                 <button
