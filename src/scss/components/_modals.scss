@@ -1,9 +1,9 @@
 .modal {
-    h4 {
+    .modal-title {
         font-size: calc(1rem + 1vmin);
     }
-    p {
-        font-size: calc(1rem + 0.5vmin);
+    h4 {
+        font-size: calc(1rem + 0.75vmin);
     }
     .modal-content {
         background-color: darken($white, 5);
