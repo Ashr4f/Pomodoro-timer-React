@@ -37,9 +37,14 @@ const App = () => {
                     show={modalShow}
                     onHide={() => setModalShow(false)}
                     onSet={value => {
-                        setModalShow(false);
                         setSecondsDefaultValue(value);
                         setBreakPaused(false);
+                        setModalShow(false);
+                    }}
+                    onExit={() => {
+                        setSecondsDefaultValue(0);
+                        setBreakPaused(true);
+                        setModalShow(false);
                     }}
                 />
             </div>

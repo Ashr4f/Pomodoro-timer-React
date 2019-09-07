@@ -23,7 +23,7 @@ export default function BreakTimerModal(props) {
 
     return (
         <Modal
-            onHide={props.onHide}
+            onHide={props.onExit}
             show={props.show}
             size={"md"}
             aria-labelledby={"contained-modal-title-vcenter"}
@@ -59,7 +59,7 @@ export default function BreakTimerModal(props) {
                 </div>
             </Modal.Body>
             <div className={"clearfix modal-footer-container"}>
-                <button type={"button"} onClick={() => props.onHide()}>
+                <button type={"button"} onClick={() => props.onExit()}>
                     {"Close"}
                 </button>
                 <button
