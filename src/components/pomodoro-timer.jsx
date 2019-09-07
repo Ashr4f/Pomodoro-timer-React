@@ -53,6 +53,9 @@ export default function PomodoroTimer(props) {
         if (seconds >= 1 && seconds <= 60 * 60) {
             setPaused(false);
         }
+        if (seconds <= 0) {
+            props.showModal(true);
+        }
     }
     function incrementTimer() {
         if (seconds >= 0 && seconds <= 59 * 60) {
@@ -95,7 +98,11 @@ export default function PomodoroTimer(props) {
                     className={"timer-button"}
                     type={"button"}
                     onClick={paused ? startTimer : pauseTimer}>
-                    {paused ? "Start" : "Pause"}
+                    {paused && seconds <= 0
+                        ? "Break"
+                        : paused
+                        ? "Start"
+                        : "Pause"}
                 </button>
                 <button
                     className={"timer-button"}
