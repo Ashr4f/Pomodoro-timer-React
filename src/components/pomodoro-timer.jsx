@@ -91,8 +91,8 @@ export default function PomodoroTimer(props) {
                 <button
                     className={"timer-button"}
                     type={"button"}
-                    onClick={incrementTimer}>
-                    {"+"}
+                    onClick={decrementTimer}>
+                    {"-"}
                 </button>
                 <button
                     className={"timer-button"}
@@ -113,8 +113,8 @@ export default function PomodoroTimer(props) {
                 <button
                     className={"timer-button"}
                     type={"button"}
-                    onClick={decrementTimer}>
-                    {"-"}
+                    onClick={incrementTimer}>
+                    {"+"}
                 </button>
             </div>
         </React.Fragment>

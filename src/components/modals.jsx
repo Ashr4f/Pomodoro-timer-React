@@ -43,18 +43,19 @@ export default function BreakTimerModal(props) {
                             .toString()
                             .padStart(2, "0")}`}
                     </p>
+
                     <button
                         className={"float-left break-button"}
                         type={"button"}
-                        onClick={incrementBreakSeconds}>
-                        {"+"}
+                        onClick={decrementBreakSeconds}>
+                        {"-"}
                     </button>
 
                     <button
                         className={"float-right break-button"}
                         type={"button"}
-                        onClick={decrementBreakSeconds}>
-                        {"-"}
+                        onClick={incrementBreakSeconds}>
+                        {"+"}
                     </button>
                 </div>
             </Modal.Body>
