@@ -29,7 +29,7 @@ const App = () => {
             <div className={"content"}>
                 <PomodoroTimer
                     showModal={setModalShow}
-                    secondsDefaultValue={secondsDefaultValue}
+                    secondsDefaultValue={() => secondsDefaultValue}
                     breakPaused={breakPaused}
                 />
 
