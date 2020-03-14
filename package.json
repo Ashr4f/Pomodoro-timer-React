@@ -24,7 +24,7 @@
   "homepage": "https://github.com/Ashr4f/Pomodoro-timer-React#readme",
   "devDependencies": {
     "@becode/eslint-config": "^0.5.2",
-    "acorn": "^7.0.0",
+    "acorn": "^7.1.1",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.0",
