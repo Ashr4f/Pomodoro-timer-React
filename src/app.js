@@ -1,6 +1,5 @@
 global.jQuery = require("jquery");
 require("bootstrap");
-import "bootstrap/dist/css/bootstrap.css";
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -11,6 +10,7 @@ import BreakTimerModal from "./components/modals";
 
 import PomodoroTimer from "./components/pomodoro-timer";
 
+import "bootstrap/dist/css/bootstrap.css";
 import "./app.scss";
 
 const App = () => {
@@ -22,9 +22,7 @@ const App = () => {
 
     return (
         <React.Fragment>
-            <div className={"header-container"}>
-                <Header />
-            </div>
+            <Header />
 
             <div className={"content"}>
                 <PomodoroTimer
